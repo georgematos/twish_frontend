@@ -1,0 +1,13 @@
+header {
+  display: flex;
+  /*alinhamento horizontal */
+  /* justify-content: center; */ 
+  /* alinhamento vertical */
+  align-content: center; 
+  background-color: #9900FA;
+  padding: 20px;
+}
+
+.title {
+  font-size: 30px;
+}

@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Paleta
+#343837 - dark
+#C6FCFF - sky blue
+#CEA2FD - lilac
+#9900FA - purple
+*/
+
+* {
+  margin: 0px;
+  padding: 0px;
+  outline: 0px;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  background-color: #343837;
+  color: #C6FCFF;
+}
