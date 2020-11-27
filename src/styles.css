@@ -19,3 +19,7 @@ body {
   background-color: #343837;
   color: #C6FCFF;
 }
+
+.container {
+  padding: 10px;
+}
