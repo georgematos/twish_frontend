@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TodoService } from '../services/todo.service';
+import { Router } from '@angular/router';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -8,16 +9,19 @@ import { TodoService } from '../services/todo.service';
 })
 export class LoginComponent implements OnInit {
 
-  public todos: any = []
+  credentials = { username: '', password: '' };
 
-  constructor(private todoService: TodoService) { }
+  constructor(
+    private loginService: LoginService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
-    this.loadTodos()
+
   }
 
-  loadTodos(): void {
-    this.todoService.getTodos().subscribe(data => this.todos = data.todos)
+  login(): void {
+    console.log(this.credentials)
   }
 
 }
