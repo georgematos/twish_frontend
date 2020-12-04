@@ -9,7 +9,8 @@ import { LoginService } from '../services/login.service';
 })
 export class LoginComponent implements OnInit {
 
-  credentials = { username: '', password: '' };
+  credentials = { username: '', email: '', password: '' };
+  facebookAuthUrl: string | undefined;
 
   constructor(
     private loginService: LoginService,
@@ -17,11 +18,16 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
+    this.askAuthLinkForFacebook()
   }
 
   login(): void {
     console.log(this.credentials)
+  }
+
+  askAuthLinkForFacebook() {
+    this.loginService.getAuthLinkForFacebook()
+      .subscribe((data => this.facebookAuthUrl = data.url))
   }
 
 }
