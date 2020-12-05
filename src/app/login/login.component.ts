@@ -9,7 +9,7 @@ import { LoginService } from '../services/login.service';
 })
 export class LoginComponent implements OnInit {
 
-  credentials = { username: '', email: '', password: '' };
+  credentials = { username: '', password: '' };
   facebookAuthUrl: string | undefined;
 
   constructor(
@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
-    console.log(this.credentials)
+    this.loginService.authenticate(this.credentials)
   }
 
   askAuthLinkForFacebook() {

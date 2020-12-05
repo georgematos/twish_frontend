@@ -15,7 +15,12 @@ export class LoginService {
     private configs: Configurations
   ) { }
 
-  authenticate(): void {
+  authenticate(credentials: any): void {
+    this.http.post(`${this.configs.URL}/signin`, credentials)
+      .subscribe(
+        resp => console.log(resp),
+        error => console.log(error.error.message)
+      )
   }
 
   getAuthLinkForFacebook(): Observable<any> {
