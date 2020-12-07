@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
-import { LoginService } from '../services/login.service';
 import { TokenStorageService } from '../services/token-storage.service';
 
 @Component({
@@ -21,8 +20,7 @@ export class LoginComponent implements OnInit {
   
   facebookAuthUrl: string | undefined;
 
-  constructor(
-    private loginService: LoginService,
+  constructor(    
     private authService: AuthService,
     private tokenStorage: TokenStorageService,
   ) { }
@@ -61,7 +59,7 @@ export class LoginComponent implements OnInit {
   }
 
   askAuthLinkForFacebook() {
-    this.loginService.getAuthLinkForFacebook()
+    this.authService.getAuthLinkForFacebook()
       .subscribe((data => this.facebookAuthUrl = data.url))
   }
 
