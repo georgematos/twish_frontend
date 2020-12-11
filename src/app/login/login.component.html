@@ -1,7 +1,7 @@
 <div class="container">
   <div>
     <img id="profile-img" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
-    <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit" #f="ngForm" novalidate>
+    <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
       <div>
         <label for="username">Username</label>
         <input type="text" name="username" [(ngModel)]="form.username" required #username="ngModel">
@@ -31,6 +31,8 @@
     <div class="alert alert-success" *ngIf="isLoggedIn">
       Logged in as {{ roles }}.
     </div>
-    or login with <a [href]="facebookAuthUrl">Facebook</a>
+    <div *ngIf="!isLoggedIn">
+      or login with <a [href]="facebookAuthUrl">Facebook</a>
+    </div>
   </div>
 </div>
